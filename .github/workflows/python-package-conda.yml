@@ -1,0 +1,42 @@
+name: Run Lecture Solver
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-solver:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.12"]
+
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Built-in test cases (T1-T8)
+        run: python lecture_solver.py --demo
+
+      - name: Sample input
+        run: python lecture_solver.py sample.txt
+
+      - name: Example input (mydata.txt)
+        run: python lecture_solver.py mydata.txt
+
+      - name: Randomised cross-check against brute force
+        run: python lecture_solver.py --stress 1000
+
+      - name: Generate the LaTeX fragments used by the report
+        run: |
+          python lecture_solver.py --latex-report > /dev/null
+          python lecture_solver.py --latex-bench > /dev/null
