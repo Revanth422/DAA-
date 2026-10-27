@@ -1,0 +1,40 @@
+--- T1 two overlapping lectures (n = 2) ---
+Selected lectures (1-indexed): [1, 2]
+lecture   1 09:00-10:00 supervised by [2]
+lecture   2 09:30-10:30 supervised by [1]
+Independent verification: PASSED
+--- T2 night lecture wraps midnight (n = 2) ---
+Selected lectures (1-indexed): [1, 2]
+lecture   1 23:00-01:00 supervised by [2]
+lecture   2 00:30-02:00 supervised by [1]
+Independent verification: PASSED
+--- T3 two chains around the day (n = 4) ---
+Selected lectures (1-indexed): [1, 2, 3, 4]
+lecture   1 01:00-03:00 supervised by [2]
+lecture   2 02:00-04:00 supervised by [1]
+lecture   3 13:00-15:00 supervised by [4]
+lecture   4 14:00-16:00 supervised by [3]
+Independent verification: PASSED
+--- T4 four blocks, private lectures (n = 8) ---
+Selected lectures (1-indexed): [1, 2, 4, 6, 7, 8]
+lecture   1 00:00-02:00 supervised by [2]
+lecture   2 01:00-03:00 supervised by [1]
+lecture   3 00:30-01:00 supervised by [1]
+lecture   4 08:00-10:00 supervised by [6]
+lecture   5 09:00-11:00 supervised by [4]
+lecture   6 08:30-09:00 supervised by [4]
+lecture   7 16:00-18:00 supervised by [8]
+lecture   8 17:00-19:00 supervised by [7]
+Independent verification: PASSED
+--- T5 lecture touched by two blocks (n = 5) ---
+No valid subset exists.
+--- T6 full-day lecture + private partner (n = 2) ---
+Selected lectures (1-indexed): [1, 2]
+lecture   1 00:00-00:00 supervised by [2]
+lecture   2 10:00-11:00 supervised by [1]
+Independent verification: PASSED
+--- T7 isolated lecture (n = 3) ---
+No valid subset exists.
+--- T8 touching endpoints do not overlap (n = 2) ---
+No valid subset exists.
+All demo cases passed.
