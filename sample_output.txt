@@ -1,0 +1,11 @@
+--- sample.txt (n = 8) ---
+Selected lectures (1-indexed): [1, 2, 4, 6, 7, 8]
+lecture   1 00:00-02:00 supervised by [2]
+lecture   2 01:00-03:00 supervised by [1]
+lecture   3 00:30-01:00 supervised by [1]
+lecture   4 08:00-10:00 supervised by [6]
+lecture   5 09:00-11:00 supervised by [4]
+lecture   6 08:30-09:00 supervised by [4]
+lecture   7 16:00-18:00 supervised by [8]
+lecture   8 17:00-19:00 supervised by [7]
+Independent verification: PASSED
