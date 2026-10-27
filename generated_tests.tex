@@ -1,0 +1,20 @@
+\begin{longtable}{p{4.6cm}p{5.6cm}p{2.6cm}c}
+\toprule Test & Lectures (start--end) & Algorithm output & OK \\ \midrule \endhead
+T1 two overlapping lectures & {\footnotesize L1\,09:00--10:00, L2\,09:30--10:30} & $S=\{1,2\}$ & \checkmark \\
+T2 night lecture wraps midnight & {\footnotesize L1\,23:00--01:00, L2\,00:30--02:00} & $S=\{1,2\}$ & \checkmark \\
+T3 two chains around the day & {\footnotesize L1\,01:00--03:00, L2\,02:00--04:00, L3\,13:00--15:00, L4\,14:00--16:00} & $S=\{1,2,3,4\}$ & \checkmark \\
+T4 four blocks, private lectures & {\footnotesize L1\,00:00--02:00, L2\,01:00--03:00, L3\,00:30--01:00, L4\,08:00--10:00, L5\,09:00--11:00, L6\,08:30--09:00, L7\,16:00--18:00, L8\,17:00--19:00} & $S=\{1,2,4,6,7,8\}$ & \checkmark \\
+T5 lecture touched by two blocks & {\footnotesize L1\,01:00--03:00, L2\,02:00--04:00, L3\,05:00--07:00, L4\,06:00--08:00, L5\,03:30--05:30} & none & \checkmark \\
+T6 full-day lecture + private partner & {\footnotesize L1\,00:00--00:00, L2\,10:00--11:00} & $S=\{1,2\}$ & \checkmark \\
+T7 isolated lecture & {\footnotesize L1\,09:00--10:00, L2\,09:30--10:30, L3\,15:00--16:00} & none & \checkmark \\
+T8 touching endpoints do not overlap & {\footnotesize L1\,09:00--10:00, L2\,10:00--11:00} & none & \checkmark \\
+\bottomrule \end{longtable}
+\begin{center}\begin{tabular}{lrrr}
+\toprule Instance family & Instances & Solvable & Disagreements \\ \midrule
+random, period 24 & 200 & 35 & 0 \\
+planted, period 24 & 200 & 200 & 0 \\
+mutated, period 24 & 200 & 92 & 0 \\
+planted, period 1440 & 200 & 200 & 0 \\
+mutated, period 1440 & 200 & 88 & 0 \\
+\bottomrule \end{tabular}\end{center}
+\par\noindent\textbf{All built-in tests and all cross-checks passed.}
